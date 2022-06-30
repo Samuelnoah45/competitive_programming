@@ -1,0 +1,8 @@
+function gradingStudents(grades) {
+for (var i = 0; i < grades.length; i++) {
+  var x = grades[i] % 5 ;
+  if (5-x<3 && grades[i] >=38) {
+    grades[i] =grades[i]+5-x;
+  }
+ } return grades;
+}
