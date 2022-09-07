@@ -1,0 +1,13 @@
+ var s="is2 sentence4 This1 a3"
+sortSentence(s)
+var sortSentence = function(s) {
+  s= s.split(' ');
+ let  y=new Array(s.length-1)
+ for(var i=0;i<s.length; i++){
+       var index=  parseInt(s[i].charAt(s[i].length - 1))
+         y[index-1]=s[i].slice(0,-1)
+     
+   }
+   s=y.join(" ")
+   return s
+};
