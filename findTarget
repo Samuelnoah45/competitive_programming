@@ -1,0 +1,16 @@
+ var nums =[48,90,9,21,31,35,19,69,29,52,100,54,21,86,6,45,42,5,62,77,15,38]
+ var target=6
+ targetIndices(nums,target)
+ function targetIndices(nums, target) {
+    var counter=[]
+    nums.sort(function (a, b) {  return a - b;  });
+   for(var i=0;i<nums.length;i++){
+      if(nums[i]==target){
+         counter.push(i)
+      }
+   }
+   console.log(counter);
+   console.log(nums);
+   return counter;
+    
+}
