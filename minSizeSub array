@@ -1,0 +1,24 @@
+/**
+ * @param {number} target
+ * @param {number[]} nums
+ * @return {number}
+ */
+ var minSubArrayLen = function(target, nums) 
+   {
+     var subString=nums.length
+     var check=false;
+  for(var i=0;i<nums.length;i++){
+      var sum=0
+      var counter=0
+    for(var j=i;j<nums.length;j++){
+        sum+=nums[j];
+        counter++;
+      if(sum>=target&&counter<=subString){
+           subString=counter
+           check=true
+           break;
+      } 
+    }
+  }
+return    !check? 0:subString
+};
