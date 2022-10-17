@@ -1,0 +1,26 @@
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var longestOnes = function (nums, k) {
+  var result = 0;
+  for (var i = 0; i < nums.length; i++) {
+    var flip = k;
+    var counter = 0;
+    for (var j = i; j < nums.length; j++) {
+      if (nums[j] == 1) {
+        counter++;
+        if (counter > result) result = counter;
+      } else if (nums[j] == 0 && flip > 0) {
+        counter++;
+        if (counter > result) result = counter;
+        flip--;
+      } else if (nums[j] == 0 && flip == 0) {
+        break;
+      }
+    }
+  }
+
+  return result;
+};
