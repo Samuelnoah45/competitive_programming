@@ -1,0 +1,36 @@
+/**
+ * @param {number[]} people
+ * @param {number} limit
+ * @return {number}
+ */
+var numRescueBoats = function (people, limit) {
+  people.sort(function (a, b) {
+    return a - b;
+  });
+  var start = 0;
+  var last = people.length;
+  var boat = 0;
+  var Calc = 0;
+  for (i = start; i < people.length; i++) {
+    if (people[last - 1] == limit) {
+      boat++;
+      last--;
+    } else {
+      Calc = Calc + people[start] + people[last - 1];
+      console.log(Calc);
+      if (Calc > limit) {
+        last--;
+        boat++;
+        Calc = 0;
+      } else if (Calc < limit) {
+        Calc -= people[last - 1];
+        start++;
+      } else {
+        last--;
+        Calc = 0;
+        boat++;
+      }
+    }
+  }
+  return boat;
+};
