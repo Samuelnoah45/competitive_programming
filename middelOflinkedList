@@ -1,0 +1,24 @@
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var middleNode = function(head) {
+    var pointerOne=head
+    var pointerTwo=head;
+    while(pointerTwo!==null&&pointerTwo.next!==null){
+         pointerOne=pointerOne.next||null;
+         pointerTwo=pointerTwo.next?.next||null
+
+    }
+
+    return pointerOne;
+    
+    
+};
