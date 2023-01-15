@@ -1,0 +1,18 @@
+def countingValleys(steps, path):
+    path = list(path)
+    check = 0
+    atVally = False
+    visted = 0
+    for p in path:
+        if p == "U":
+            check += 1
+            if check >= 0:
+               atVally = False 
+            
+        else:
+            check -=1
+        
+        if check < 0 and not atVally:
+            visted += 1
+            atVally = True
+    return visted
