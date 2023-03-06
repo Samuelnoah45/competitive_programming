@@ -3,21 +3,14 @@ class Solution:
 
         res = 0
         hash = {0:1}
-        for i in range(len(nums)):
-            if nums[i]%2 == 0:
-                nums[i] = 0
-            else:
-                nums[i] = 1
-        
+
+        nums = [0 if num%2 ==0 else 1 for num in nums]
+        prefix = list(accumulate(nums))
+       
         sums = 0
-        for num in nums:
-            sums += num
-            if (sums -k) not in hash:
-                 hash[sums] = hash.get(sums,0) + 1
+        for sum_ in prefix:
+            if (sum_ -k)  in hash:
+                res += hash[sum_ -k]
+            hash[sum_] = hash.get(sum_,0) + 1
 
-            else:
-                res += hash[sums-k]
-                hash[sums] = hash.get(sums,0) + 1
-
-            
         return res
