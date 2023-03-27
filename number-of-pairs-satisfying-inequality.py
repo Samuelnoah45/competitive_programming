@@ -16,6 +16,9 @@ class Solution:
         
             for j in range(0, n2):
                 R[j] = arr[m + 1 + j]
+
+            # -------------------------#
+            # counter 
             idx1 = 0
             idx2 = 0
             while idx1 < len(L) and idx2 < len(R):
@@ -25,6 +28,7 @@ class Solution:
                     idx1 += 1
                 else:
                     idx2 += 1
+            #---------------------------#
 
             
         
