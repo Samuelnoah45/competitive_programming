@@ -12,8 +12,7 @@ class Solution:
 		 
 		que = deque()
 		parent  = defaultdict(int)
-		
-		visited = set()
+
 	    for i in range(V):
 	        if i not in visited:
 	            que.append(i)
